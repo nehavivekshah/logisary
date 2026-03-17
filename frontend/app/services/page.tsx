@@ -12,7 +12,7 @@ export default function ServicesPage() {
             id: 0,
             title: "Lubricant & Additives",
             description: "We provide safe, reliable, and efficient transportation solutions for lubricants and additives across India. Our specialized SS tankers are designed to handle sensitive lubricant materials while maintaining product integrity and quality.",
-            icon: <Droplets className="w-8 h-8 text-blue-900" />,
+            icon: <Droplets className="w-8 h-8 text-primary" />,
             // Using placeholder color/gradient instead of image
             bgClass: "bg-zinc-200"
         },
@@ -20,22 +20,22 @@ export default function ServicesPage() {
             id: 1,
             title: "Hazard & Non-Hazard chemical",
             description: "We offer secure and compliant transportation services for both hazardous and non-hazardous chemicals across India. Our fleet of specialized SS tankers and trained personnel ensure safe handling, strict regulatory compliance, and zero-contamination movement of chemical cargo.",
-            icon: <FlaskConical className="w-8 h-8 text-blue-900" />,
+            icon: <FlaskConical className="w-8 h-8 text-primary" />,
             bgClass: "bg-zinc-300"
         },
         {
             id: 2,
             title: "FMCG",
             description: "We provide efficient and hygienic transportation solutions for FMCG liquid products across India. Our dedicated tankers ensure contamination-free handling while maintaining product quality throughout transit.",
-            icon: <ShoppingBasket className="w-8 h-8 text-blue-900" />,
+            icon: <ShoppingBasket className="w-8 h-8 text-primary" />,
             bgClass: "bg-zinc-400"
         },
         {
             id: 3,
             title: "Industrial Oil",
             description: "We offer specialized transportation services for industrial oils, ensuring safe handling and secure movement across long distances. Our SS and customized tankers are suitable for various grades of industrial oils, maintaining consistency and preventing contamination.",
-            icon: <Factory className="w-8 h-8 text-blue-900" />,
-            bgClass: "bg-blue-100"
+            icon: <Factory className="w-8 h-8 text-primary" />,
+            bgClass: "bg-primary/10"
         }
     ];
 
@@ -46,9 +46,9 @@ export default function ServicesPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">Services</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">Services</span>
+                        <span className="text-primary">Services</span>
                     </div>
                 </div>
             </section>
@@ -57,7 +57,7 @@ export default function ServicesPage() {
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
-                        <span className="bg-blue-100 text-blue-900 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Our Service</span>
+                        <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Our Service</span>
                         <h2 className="text-4xl font-bold text-zinc-900 mt-6 mb-6">Our Range of Logistics Services</h2>
                         <p className="text-zinc-500 text-lg leading-relaxed">
                             Our state-of-the-art facilities and innovative technology support e-commerce fulfillment and project cargo handling, providing you with tailored solutions.
@@ -91,7 +91,7 @@ export default function ServicesPage() {
                                     absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-xl transition-all duration-500
                                     ${activeService === service.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
                                 `}>
-                                    <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-900">
+                                    <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-4 text-primary">
                                         {service.icon}
                                     </div>
                                     <h3 className="text-2xl font-bold text-zinc-900 mb-3">{service.title}</h3>

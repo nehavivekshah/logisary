@@ -44,9 +44,9 @@ export default function HowItWorksPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">How It Works</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">How It Works</span>
+                        <span className="text-primary">How It Works</span>
                     </div>
                 </div>
             </section>

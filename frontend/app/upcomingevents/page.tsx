@@ -36,7 +36,7 @@ export default function UpcomingEventsPage() {
             id: 1,
             title: "India Transport Expo 2026",
             badge: "Exhibition",
-            badgeColor: "bg-blue-600",
+            badgeColor: "bg-primary-light",
             date: { day: "15", month: "Jan" },
             image: "bg-zinc-200", // Placeholder for actual image
             location: "Pragati Maidan, New Delhi",
@@ -49,7 +49,7 @@ export default function UpcomingEventsPage() {
             id: 2,
             title: "Liquid Safety & Spillage Control",
             badge: "Online Webinar",
-            badgeColor: "bg-red-600",
+            badgeColor: "bg-secondary",
             date: { day: "22", month: "Jan" },
             image: "bg-zinc-300",
             location: "Zoom Meeting (Online)",
@@ -80,9 +80,9 @@ export default function UpcomingEventsPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">Upcoming Events</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">Upcoming Events</span>
+                        <span className="text-primary">Upcoming Events</span>
                     </div>
                 </div>
             </section>
@@ -114,11 +114,11 @@ export default function UpcomingEventsPage() {
 
                                     <div className="space-y-2 mb-4 text-sm text-zinc-600">
                                         <div className="flex items-center gap-3">
-                                            {event.type === 'online' ? <Video size={16} className="text-red-600" /> : <MapPin size={16} className="text-red-600" />}
+                                            {event.type === 'online' ? <Video size={16} className="text-secondary" /> : <MapPin size={16} className="text-secondary" />}
                                             <span>{event.location}</span>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <Clock size={16} className="text-red-600" />
+                                            <Clock size={16} className="text-secondary" />
                                             <span>{event.time}</span>
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@ export default function UpcomingEventsPage() {
                                     />
                                 </div>
 
-                                <div className="bg-blue-50 text-blue-800 p-3 rounded-lg text-xs flex gap-3 items-start mb-6">
+                                <div className="bg-primary/5 text-primary p-3 rounded-lg text-xs flex gap-3 items-start mb-6">
                                     <Info size={16} className="shrink-0 mt-0.5" />
                                     <p>Registration details will be sent to your registered email address.</p>
                                 </div>

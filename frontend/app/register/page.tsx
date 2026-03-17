@@ -89,10 +89,10 @@ export default function RegisterPage() {
                             {/* Carrier Specific Field with Animation */}
                             {role === 'carrier' && (
                                 <div className="mb-6 animate-in slide-in-from-top-2 duration-300">
-                                    <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
-                                        <label className="text-xs font-bold text-blue-800 uppercase block mb-1">DOT / MC Number</label>
+                                    <div className="p-4 bg-primary/5 border border-blue-100 rounded-lg">
+                                        <label className="text-xs font-bold text-primary uppercase block mb-1">DOT / MC Number</label>
                                         <input type="text" className="w-full p-3 border border-blue-200 rounded-lg outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] bg-white transition-all" placeholder="Enter DOT Number" />
-                                        <small className="text-blue-600/80 text-xs mt-1 block">Required for carrier verification.</small>
+                                        <small className="text-primary-light/80 text-xs mt-1 block">Required for carrier verification.</small>
                                     </div>
                                 </div>
                             )}

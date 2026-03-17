@@ -25,9 +25,9 @@ export default function OrdersPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">Orders</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">Orders</span>
+                        <span className="text-primary">Orders</span>
                     </div>
                 </div>
             </section>
@@ -66,12 +66,12 @@ export default function OrdersPage() {
                                 <Search className="absolute left-3 top-3 text-zinc-400" size={18} />
                                 <input
                                     type="text"
-                                    className="w-full pl-10 pr-4 py-2 border border-zinc-200 rounded-lg focus:outline-none focus:border-blue-900 transition-colors"
+                                    className="w-full pl-10 pr-4 py-2 border border-zinc-200 rounded-lg focus:outline-none focus:border-primary transition-colors"
                                     placeholder="Search by Order ID or Carrier..."
                                 />
                             </div>
                             <div className="md:col-span-3">
-                                <select className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:outline-none focus:border-blue-900 bg-white cursor-pointer">
+                                <select className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:outline-none focus:border-primary bg-white cursor-pointer">
                                     <option disabled selected>Status: All</option>
                                     <option>In Transit</option>
                                     <option>Delivered</option>
@@ -81,7 +81,7 @@ export default function OrdersPage() {
                             <div className="md:col-span-3">
                                 <input
                                     type="date"
-                                    className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:outline-none focus:border-blue-900 text-zinc-500"
+                                    className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:outline-none focus:border-primary text-zinc-500"
                                 />
                             </div>
                             <div className="md:col-span-2">
@@ -119,7 +119,7 @@ export default function OrdersPage() {
                                         </td>
                                         <td className="p-4 font-medium">Express Logi Corp</td>
                                         <td className="p-4">
-                                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-[11px] font-bold uppercase">In Transit</span>
+                                            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-[11px] font-bold uppercase">In Transit</span>
                                         </td>
                                         <td className="p-4 font-bold">₹45,000</td>
                                         <td className="p-4 text-center">

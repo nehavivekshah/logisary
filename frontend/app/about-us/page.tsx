@@ -19,9 +19,9 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">About Us</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">About Us</span>
+                        <span className="text-primary">About Us</span>
                     </div>
                 </div>
             </section>
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
                         {/* Content */}
                         <div>
-                            <span className="inline-block py-1 px-4 rounded-full bg-blue-50 text-[#104674] font-bold text-sm mb-4">About Us</span>
+                            <span className="inline-block py-1 px-4 rounded-full bg-primary/5 text-[#104674] font-bold text-sm mb-4">About Us</span>
                             <h2 className="text-4xl font-bold text-zinc-900 mb-6 leading-tight">Your Trusted Partner in Bulk Liquid Transportation</h2>
                             <p className="text-zinc-500 mb-8 leading-relaxed">
                                 R. K. Transportation Services Pvt. Ltd. company based in Mumbai, has been formed to initially transporting Liquid bulk materials in tankers, All over India.
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
                         {/* Content */}
                         <div>
-                            <span className="inline-block py-1 px-4 rounded-full bg-blue-50 text-[#104674] font-bold text-sm mb-4">Our Values</span>
+                            <span className="inline-block py-1 px-4 rounded-full bg-primary/5 text-[#104674] font-bold text-sm mb-4">Our Values</span>
                             <h2 className="text-4xl font-bold text-zinc-900 mb-6 leading-tight">Committed to Safety, Driven by Excellence</h2>
                             <p className="text-zinc-500 mb-10 leading-relaxed">
                                 At R. K. Transportation Services Pvt. Ltd., our mission is to deliver safe, reliable, and efficient bulk liquid transportation while continuously expanding into integrated logistics solutions.
@@ -177,7 +177,7 @@ export default function AboutPage() {
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="text-center mb-16 max-w-2xl mx-auto">
-                        <span className="inline-block py-1 px-4 rounded-full bg-blue-50 text-[#104674] font-bold text-sm mb-4">Our Team</span>
+                        <span className="inline-block py-1 px-4 rounded-full bg-primary/5 text-[#104674] font-bold text-sm mb-4">Our Team</span>
                         <h2 className="text-4xl font-bold text-zinc-900 mb-4">The People Behind Our Success</h2>
                         <p className="text-zinc-500">Each member brings a wealth of knowledge and expertise, ensuring that we deliver top-notch logistics solutions.</p>
                     </div>

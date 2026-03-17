@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext';
-import { Truck } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 export default function Navbar() {
     const { user, logout } = useAuth();
@@ -22,8 +22,8 @@ export default function Navbar() {
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="text-3xl font-black bg-gradient-to-r from-red-600 to-blue-900 bg-clip-text text-transparent italic flex items-center">
-                        LOGISARY <Truck className="inline-block ml-1 w-8 h-8 text-blue-900 fill-current" />
+                    <div className="text-3xl font-black bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent italic flex items-center">
+                        <img src="/assets/logo.png" alt="Logo" className="w-55 h-12" />
                     </div>
                 </Link>
 
@@ -33,7 +33,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-bold text-zinc-800 hover:text-blue-900 uppercase tracking-tight"
+                            className="text-sm font-bold text-zinc-500 hover:text-primary tracking-tight"
                         >
                             {link.name}
                         </Link>
@@ -52,17 +52,17 @@ export default function Navbar() {
                                     Dashboard
                                 </Link>
                             )}
-                            <button onClick={logout} className="px-5 py-2 rounded-full bg-red-600 text-white font-bold text-sm hover:bg-red-700">
+                            <button onClick={logout} className="px-5 py-2 rounded-full bg-secondary text-white font-bold text-sm hover:bg-secondary-dark">
                                 Logout
                             </button>
                         </>
                     ) : (
                         <>
-                            <Link href="/login" className="px-6 py-2 rounded-full bg-blue-900 text-white font-bold text-sm hover:bg-blue-800 flex items-center gap-1">
-                                Login &gt;
+                            <Link href="/login" className="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark flex items-center gap-1">
+                                Login <ChevronRight size={15} />
                             </Link>
-                            <Link href="/register" className="px-6 py-2 rounded-full bg-blue-700 text-white font-bold text-sm hover:bg-blue-600 flex items-center gap-1">
-                                New Registration &gt;
+                            <Link href="/register" className="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark flex items-center gap-1">
+                                New Registration <ChevronRight size={15} />
                             </Link>
                         </>
                     )}

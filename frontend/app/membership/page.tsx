@@ -22,9 +22,9 @@ export default function MembershipPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">Membership</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">Membership</span>
+                        <span className="text-primary">Membership</span>
                     </div>
                 </div>
             </section>
@@ -45,19 +45,19 @@ export default function MembershipPage() {
                                     </div>
 
                                     {/* Social Overlay */}
-                                    <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/40 transition-all duration-300 flex items-center justify-center">
+                                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all duration-300 flex items-center justify-center">
                                         <ul className="flex gap-2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-blue-600 hover:text-white rounded-full flex items-center justify-center transition-colors"><Twitter size={16} /></a></li>
-                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-blue-700 hover:text-white rounded-full flex items-center justify-center transition-colors"><Linkedin size={16} /></a></li>
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-primary-light hover:text-white rounded-full flex items-center justify-center transition-colors"><Twitter size={16} /></a></li>
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-primary-light hover:text-white rounded-full flex items-center justify-center transition-colors"><Linkedin size={16} /></a></li>
                                             <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-pink-600 hover:text-white rounded-full flex items-center justify-center transition-colors"><Instagram size={16} /></a></li>
-                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-blue-800 hover:text-white rounded-full flex items-center justify-center transition-colors"><Facebook size={16} /></a></li>
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-primary-light hover:text-white rounded-full flex items-center justify-center transition-colors"><Facebook size={16} /></a></li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 {/* Content Box */}
-                                <div className="relative mx-4 -mt-8 bg-white p-6 rounded-lg shadow-lg border-b-2 border-transparent group-hover:border-blue-900 transition-all z-10 text-center">
-                                    <h4 className="font-bold text-lg text-zinc-900 hover:text-blue-900 transition-colors cursor-pointer">{member.name}</h4>
+                                <div className="relative mx-4 -mt-8 bg-white p-6 rounded-lg shadow-lg border-b-2 border-transparent group-hover:border-primary transition-all z-10 text-center">
+                                    <h4 className="font-bold text-lg text-zinc-900 hover:text-primary transition-colors cursor-pointer">{member.name}</h4>
                                     <span className="text-zinc-500 text-sm block mb-0">{member.role}</span>
 
                                     <div className="absolute right-4 top-4 text-zinc-300">
@@ -71,20 +71,20 @@ export default function MembershipPage() {
                     {/* Pagination */}
                     <div className="flex justify-center">
                         <div className="flex gap-2 items-center">
-                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-primary hover:text-white hover:border-primary transition-all">
                                 <ChevronLeft size={16} />
                             </button>
-                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white font-bold transition-all">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-bold transition-all">
                                 01
                             </button>
-                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-primary hover:text-white hover:border-primary transition-all">
                                 02
                             </button>
                             <span className="text-zinc-500 font-bold px-2">...</span>
-                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-primary hover:text-white hover:border-primary transition-all">
                                 12
                             </button>
-                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-primary hover:text-white hover:border-primary transition-all">
                                 <ChevronRight size={16} />
                             </button>
                         </div>

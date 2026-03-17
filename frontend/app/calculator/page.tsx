@@ -46,9 +46,9 @@ export default function CalculatorPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">KM Calculate</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">KM Calculate</span>
+                        <span className="text-primary">KM Calculate</span>
                     </div>
                 </div>
             </section>
@@ -60,7 +60,7 @@ export default function CalculatorPage() {
                         {/* Header */}
                         <div className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-zinc-100 gap-4">
                             <h4 className="text-xl font-bold flex items-center gap-2 text-zinc-900">
-                                <Calculator className="text-blue-900" />
+                                <Calculator className="text-primary" />
                                 KM Calculation & Job Details
                             </h4>
                             <span className="bg-zinc-50 text-zinc-800 border border-zinc-200 px-3 py-1 rounded text-sm font-semibold">RK-TR-001</span>
@@ -201,7 +201,7 @@ export default function CalculatorPage() {
 
                             {/* Result Box */}
                             {result.distance !== null && (
-                                <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 mb-8 animate-in fade-in slide-in-from-top-4 duration-300">
+                                <div className="bg-primary/5 border border-blue-100 rounded-lg p-6 mb-8 animate-in fade-in slide-in-from-top-4 duration-300">
                                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                                         <div>
                                             <h6 className="text-zinc-600 font-semibold mb-1">Estimated Distance:</h6>

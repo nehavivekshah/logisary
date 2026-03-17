@@ -23,9 +23,9 @@ export default function HelpPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">Help 24 Hours</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">Help 24 Hours</span>
+                        <span className="text-primary">Help 24 Hours</span>
                     </div>
                 </div>
             </section>
@@ -36,7 +36,7 @@ export default function HelpPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Address Card */}
                         <div className="bg-white p-8 rounded-xl shadow-[0_5px_20px_rgba(0,0,0,0.05)] text-center group hover:-translate-y-2 transition-transform duration-300 border border-zinc-100">
-                            <div className="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 text-[#104674] group-hover:bg-[#104674] group-hover:text-white transition-colors">
+                            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center mb-6 text-[#104674] group-hover:bg-[#104674] group-hover:text-white transition-colors">
                                 <MapPin size={28} />
                             </div>
                             <h4 className="text-xl font-bold text-zinc-900 mb-4">Our Address</h4>
@@ -47,7 +47,7 @@ export default function HelpPage() {
 
                         {/* Phone Card */}
                         <div className="bg-white p-8 rounded-xl shadow-[0_5px_20px_rgba(0,0,0,0.05)] text-center group hover:-translate-y-2 transition-transform duration-300 border border-zinc-100">
-                            <div className="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 text-[#104674] group-hover:bg-[#104674] group-hover:text-white transition-colors">
+                            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center mb-6 text-[#104674] group-hover:bg-[#104674] group-hover:text-white transition-colors">
                                 <Phone size={28} />
                             </div>
                             <h4 className="text-xl font-bold text-zinc-900 mb-4">Contact Us</h4>
@@ -58,7 +58,7 @@ export default function HelpPage() {
 
                         {/* Email Card */}
                         <div className="bg-white p-8 rounded-xl shadow-[0_5px_20px_rgba(0,0,0,0.05)] text-center group hover:-translate-y-2 transition-transform duration-300 border border-zinc-100">
-                            <div className="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 text-[#104674] group-hover:bg-[#104674] group-hover:text-white transition-colors">
+                            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center mb-6 text-[#104674] group-hover:bg-[#104674] group-hover:text-white transition-colors">
                                 <Mail size={28} />
                             </div>
                             <h4 className="text-xl font-bold text-zinc-900 mb-4">Email Us</h4>

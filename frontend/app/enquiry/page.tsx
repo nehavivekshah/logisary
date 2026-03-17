@@ -17,9 +17,9 @@ export default function EnquiryPage() {
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-4">My Enquiry</h2>
                     <div className="flex items-center justify-center gap-2 text-sm font-semibold">
-                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <Link href="/" className="text-zinc-500 hover:text-primary transition">Home</Link>
                         <ChevronRight size={14} className="text-zinc-400" />
-                        <span className="text-blue-900">My Enquiry</span>
+                        <span className="text-primary">My Enquiry</span>
                     </div>
                 </div>
             </section>
@@ -30,7 +30,7 @@ export default function EnquiryPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Address */}
                         <div className="p-8 rounded-xl border border-zinc-100 shadow-sm hover:shadow-md transition text-center group">
-                            <div className="w-16 h-16 mx-auto bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition duration-300">
+                            <div className="w-16 h-16 mx-auto bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
                                 <MapPin size={28} />
                             </div>
                             <h4 className="text-xl font-bold text-zinc-900 mb-4">Our Address</h4>
@@ -41,22 +41,22 @@ export default function EnquiryPage() {
 
                         {/* Phone */}
                         <div className="p-8 rounded-xl border border-zinc-100 shadow-sm hover:shadow-md transition text-center group">
-                            <div className="w-16 h-16 mx-auto bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition duration-300">
+                            <div className="w-16 h-16 mx-auto bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
                                 <Phone size={28} />
                             </div>
                             <h4 className="text-xl font-bold text-zinc-900 mb-4">Contact Us</h4>
-                            <a href="tel:+91-22-224142646" className="text-zinc-500 hover:text-blue-900 font-medium text-lg">
+                            <a href="tel:+91-22-224142646" className="text-zinc-500 hover:text-primary font-medium text-lg">
                                 +91-22-224142646
                             </a>
                         </div>
 
                         {/* Email */}
                         <div className="p-8 rounded-xl border border-zinc-100 shadow-sm hover:shadow-md transition text-center group">
-                            <div className="w-16 h-16 mx-auto bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition duration-300">
+                            <div className="w-16 h-16 mx-auto bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
                                 <Mail size={28} />
                             </div>
                             <h4 className="text-xl font-bold text-zinc-900 mb-4">Email Us</h4>
-                            <a href="mailto:info@rktransport.in" className="text-zinc-500 hover:text-blue-900 font-medium text-lg">
+                            <a href="mailto:info@rktransport.in" className="text-zinc-500 hover:text-primary font-medium text-lg">
                                 info@rktransport.in
                             </a>
                         </div>
@@ -86,13 +86,13 @@ export default function EnquiryPage() {
 
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <input type="text" placeholder="First Name*" required className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-blue-900 transition shadow-sm" />
-                                <input type="text" placeholder="Last Name" className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-blue-900 transition shadow-sm" />
+                                <input type="text" placeholder="First Name*" required className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-primary transition shadow-sm" />
+                                <input type="text" placeholder="Last Name" className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-primary transition shadow-sm" />
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <input type="email" placeholder="Email*" required className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-blue-900 transition shadow-sm" />
+                                <input type="email" placeholder="Email*" required className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-primary transition shadow-sm" />
                                 <div className="relative">
-                                    <select className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-blue-900 transition shadow-sm appearance-none cursor-pointer text-zinc-500">
+                                    <select className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-primary transition shadow-sm appearance-none cursor-pointer text-zinc-500">
                                         <option>Service Type</option>
                                         <option value="Lubricant & Additives">Lubricant & Additives</option>
                                         <option value="Hazard & Non-Hazard chemical">Hazard & Non-Hazard chemical</option>
@@ -102,10 +102,10 @@ export default function EnquiryPage() {
                                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" size={18} />
                                 </div>
                             </div>
-                            <textarea placeholder="Message" rows={6} className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-blue-900 transition shadow-sm resize-none"></textarea>
+                            <textarea placeholder="Message" rows={6} className="w-full p-4 bg-white rounded-lg border border-zinc-200 outline-none focus:border-primary transition shadow-sm resize-none"></textarea>
 
                             <div className="text-left">
-                                <button type="button" onClick={() => alert("Message sent successfully!")} className="px-10 py-4 bg-blue-900 text-white font-bold rounded-full hover:bg-blue-800 transition shadow-lg flex items-center gap-2 group">
+                                <button type="button" onClick={() => alert("Message sent successfully!")} className="px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-light transition shadow-lg flex items-center gap-2 group">
                                     Submit Now <ChevronRight className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
