@@ -58,10 +58,10 @@ export default function Navbar() {
                         </>
                     ) : (
                         <>
-                            <Link href="/login" className="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark flex items-center gap-1">
+                            <Link href="/login" className="px-6 py-2 rounded-full bg-primary text-white text-base font-medium hover:bg-primary-dark flex items-center gap-1">
                                 Login <ChevronRight size={15} />
                             </Link>
-                            <Link href="/register" className="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark flex items-center gap-1">
+                            <Link href="/register" className="px-6 py-2 rounded-full bg-primary text-white text-base font-medium hover:bg-primary-dark flex items-center gap-1">
                                 New Registration <ChevronRight size={15} />
                             </Link>
                         </>

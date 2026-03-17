@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
-:root {
-    --color-primary:       #104674;
-    --color-primary-light: #1a5a96;
-    --color-primary-dark:  #0b3055;
-    --color-secondary:     #d8202a;
+@theme {
+    --color-primary:         #104674;
+    --color-primary-light:   #1a5a96;
+    --color-primary-dark:    #0b3055;
+    --color-secondary:       #d8202a;
     --color-secondary-light: #e8404a;
     --color-secondary-dark:  #b01820;
+    --font-family-sans:      "Outfit", sans-serif;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 }
