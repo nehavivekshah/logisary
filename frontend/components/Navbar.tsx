@@ -13,8 +13,8 @@ export default function Navbar() {
         { name: 'KM Calculate', href: '/calculator' },
         { name: 'Membership', href: '/membership' },
         { name: 'Orders', href: '/orders' },
-        { name: 'Upcoming Events', href: '/events' },
-        { name: 'Support', href: '/support' },
+        { name: 'Upcoming Events', href: '/upcomingevents' },
+        { name: 'Help 24h', href: '/help' },
     ];
 
     return (
@@ -48,8 +48,8 @@ export default function Navbar() {
                                 {user.full_name?.split(' ')[0]}
                             </span>
                             {user.role === 'ADMIN' && (
-                                <Link href="/admin" className="px-5 py-2 rounded-full bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-700">
-                                    Admin
+                                <Link href="/dashboard" className="px-5 py-2 rounded-full bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-700">
+                                    Dashboard
                                 </Link>
                             )}
                             <button onClick={logout} className="px-5 py-2 rounded-full bg-red-600 text-white font-bold text-sm hover:bg-red-700">
@@ -58,10 +58,10 @@ export default function Navbar() {
                         </>
                     ) : (
                         <>
-                            <Link href="/auth/login" className="px-6 py-2 rounded-full bg-blue-900 text-white font-bold text-sm hover:bg-blue-800 flex items-center gap-1">
+                            <Link href="/login" className="px-6 py-2 rounded-full bg-blue-900 text-white font-bold text-sm hover:bg-blue-800 flex items-center gap-1">
                                 Login &gt;
                             </Link>
-                            <Link href="/auth/register" className="px-6 py-2 rounded-full bg-blue-700 text-white font-bold text-sm hover:bg-blue-600 flex items-center gap-1">
+                            <Link href="/register" className="px-6 py-2 rounded-full bg-blue-700 text-white font-bold text-sm hover:bg-blue-600 flex items-center gap-1">
                                 New Registration &gt;
                             </Link>
                         </>

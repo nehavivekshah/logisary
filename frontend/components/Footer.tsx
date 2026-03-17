@@ -12,7 +12,7 @@ export default function Footer() {
                         <h2 className="text-4xl font-extrabold mb-4">Join Us Today And Let Us Help You To Grow Your Business.</h2>
                     </div>
                     <div className="flex items-center gap-4">
-                        <Link href="/contact" className="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors flex items-center gap-2">
+                        <Link href="/help" className="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors flex items-center gap-2">
                             Contact Us
                         </Link>
                     </div>
@@ -42,9 +42,9 @@ export default function Footer() {
                         <h4 className="font-bold text-zinc-900 mb-6 text-lg">Quick Links</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
                             <li><Link href="/" className="hover:text-blue-900 transition-colors">Home</Link></li>
-                            <li><Link href="/about" className="hover:text-blue-900 transition-colors">About Us</Link></li>
-                            <li><Link href="/#process" className="hover:text-blue-900 transition-colors">How It Works</Link></li>
-                            <li><Link href="/contact" className="hover:text-blue-900 transition-colors">Contact Us</Link></li>
+                            <li><Link href="/about-us" className="hover:text-blue-900 transition-colors">About Us</Link></li>
+                            <li><Link href="/how-it-works" className="hover:text-blue-900 transition-colors">How It Works</Link></li>
+                            <li><Link href="/help" className="hover:text-blue-900 transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 

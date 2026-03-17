@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(newUser);
         localStorage.setItem('token', newToken);
         localStorage.setItem('user', JSON.stringify(newUser));
-        router.push('/dashboard');
+        router.push('/');
     };
 
     const logout = () => {
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(null);
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        router.push('/auth/login');
+        router.push('/login');
     };
 
     return (

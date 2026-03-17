@@ -1,62 +1,96 @@
 'use client';
-import { Check } from 'lucide-react';
+import Link from 'next/link';
+import { ChevronRight, ChevronLeft, Facebook, Linkedin, Instagram, Twitter, Share2 } from 'lucide-react';
 
 export default function MembershipPage() {
+    // Team data
+    const teamMembers = [
+        { name: "Alex Fargusion", role: "Manager", image: "bg-zinc-200" },
+        { name: "Richad Stones", role: "Coordinator", image: "bg-zinc-300" },
+        { name: "Pep Gurdiola", role: "Specialist", image: "bg-zinc-400" },
+        { name: "Alex Fargusion", role: "Ceo & Funder", image: "bg-zinc-200" },
+        { name: "Jyle Richardson", role: "Coordinator", image: "bg-zinc-300" },
+        { name: "Kyle Richardson", role: "Courier", image: "bg-zinc-400" },
+        { name: "Kyle Jamension", role: "Specialist", image: "bg-zinc-200" },
+        { name: "Phill Foden", role: "Manager", image: "bg-zinc-300" },
+    ];
+
     return (
-        <div className="min-h-screen bg-zinc-50 font-sans text-zinc-800">
-            <div className="bg-blue-900 text-white py-12">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-3xl font-bold">Membership Plans</h1>
-                    <p className="mt-2 text-blue-100">Choose the plan that fits your business needs.</p>
+        <main className="font-sans text-zinc-800 bg-white">
+            {/* 1. Breadcrumb Section */}
+            <section className="relative bg-amber-50 py-20 overflow-hidden text-center">
+                <div className="container mx-auto px-4 relative z-10">
+                    <h2 className="text-4xl font-bold text-zinc-900 mb-4">Membership</h2>
+                    <div className="flex items-center justify-center gap-2 text-sm font-semibold">
+                        <Link href="/" className="text-zinc-500 hover:text-blue-900 transition">Home</Link>
+                        <ChevronRight size={14} className="text-zinc-400" />
+                        <span className="text-blue-900">Membership</span>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* 2. Team Grid Section */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                        {teamMembers.map((member, index) => (
+                            <div key={index} className="group relative">
+                                {/* Image Container */}
+                                <div className="relative overflow-hidden rounded-lg mb-0">
+                                    {/* Placeholder Image */}
+                                    <div className={`w-full aspect-[3/4] ${member.image} bg-cover bg-center transition-transform duration-500 group-hover:scale-105`}>
+                                        <div className="w-full h-full flex items-center justify-center text-zinc-400 font-bold uppercase tracking-widest bg-zinc-100">
+                                            IMAGE
+                                        </div>
+                                    </div>
 
-                    {/* Basic Plan */}
-                    <div className="bg-white p-8 rounded-lg shadow-sm border border-zinc-200">
-                        <h3 className="text-xl font-bold text-zinc-900 mb-2">Basic</h3>
-                        <p className="text-zinc-500 text-sm mb-6">For small carriers and individual truck owners.</p>
-                        <div className="text-4xl font-bold text-blue-900 mb-6">Free</div>
-                        <ul className="space-y-3 mb-8 text-sm">
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> View Public Loads</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Limited Bidding (5/month)</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Basic Support</li>
-                        </ul>
-                        <button className="w-full border border-blue-900 text-blue-900 font-bold py-2 rounded hover:bg-blue-50 transition-colors">Select Basic</button>
+                                    {/* Social Overlay */}
+                                    <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/40 transition-all duration-300 flex items-center justify-center">
+                                        <ul className="flex gap-2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-blue-600 hover:text-white rounded-full flex items-center justify-center transition-colors"><Twitter size={16} /></a></li>
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-blue-700 hover:text-white rounded-full flex items-center justify-center transition-colors"><Linkedin size={16} /></a></li>
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-pink-600 hover:text-white rounded-full flex items-center justify-center transition-colors"><Instagram size={16} /></a></li>
+                                            <li><a href="#" className="w-10 h-10 bg-white text-zinc-900 hover:bg-blue-800 hover:text-white rounded-full flex items-center justify-center transition-colors"><Facebook size={16} /></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Content Box */}
+                                <div className="relative mx-4 -mt-8 bg-white p-6 rounded-lg shadow-lg border-b-2 border-transparent group-hover:border-blue-900 transition-all z-10 text-center">
+                                    <h4 className="font-bold text-lg text-zinc-900 hover:text-blue-900 transition-colors cursor-pointer">{member.name}</h4>
+                                    <span className="text-zinc-500 text-sm block mb-0">{member.role}</span>
+
+                                    <div className="absolute right-4 top-4 text-zinc-300">
+                                        <Share2 size={16} />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
-                    {/* Pro Plan */}
-                    <div className="bg-white p-8 rounded-lg shadow-md border-2 border-blue-600 relative transform md:-translate-y-4">
-                        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl">POPULAR</div>
-                        <h3 className="text-xl font-bold text-zinc-900 mb-2">Pro</h3>
-                        <p className="text-zinc-500 text-sm mb-6">For growing fleet owners and logistics companies.</p>
-                        <div className="text-4xl font-bold text-blue-900 mb-6">₹999<span className="text-sm text-zinc-500 font-normal">/mo</span></div>
-                        <ul className="space-y-3 mb-8 text-sm">
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> unlimited Bidding</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Priority Support</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Access to Premium Loads</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Verified Badge</li>
-                        </ul>
-                        <button className="w-full bg-blue-900 text-white font-bold py-2 rounded hover:bg-blue-800 transition-colors">Select Pro</button>
+                    {/* Pagination */}
+                    <div className="flex justify-center">
+                        <div className="flex gap-2 items-center">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                                <ChevronLeft size={16} />
+                            </button>
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white font-bold transition-all">
+                                01
+                            </button>
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                                02
+                            </button>
+                            <span className="text-zinc-500 font-bold px-2">...</span>
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                                12
+                            </button>
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-200 text-zinc-500 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all">
+                                <ChevronRight size={16} />
+                            </button>
+                        </div>
                     </div>
-
-                    {/* Enterprise Plan */}
-                    <div className="bg-white p-8 rounded-lg shadow-sm border border-zinc-200">
-                        <h3 className="text-xl font-bold text-zinc-900 mb-2">Enterprise</h3>
-                        <p className="text-zinc-500 text-sm mb-6">For large scale operations and shippers.</p>
-                        <div className="text-4xl font-bold text-blue-900 mb-6">Custom</div>
-                        <ul className="space-y-3 mb-8 text-sm">
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> API Integration</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Dedicated Account Manager</li>
-                            <li className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Custom Reporting</li>
-                        </ul>
-                        <button className="w-full border border-blue-900 text-blue-900 font-bold py-2 rounded hover:bg-blue-50 transition-colors">Contact Sales</button>
-                    </div>
-
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     );
 }
