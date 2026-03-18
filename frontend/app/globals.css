@@ -1,17 +1,69 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary:         #104674;
-    --color-primary-light:   #1a5a96;
-    --color-primary-dark:    #0b3055;
-    --color-secondary:       #d8202a;
+    --color-primary: #104674;
+    --color-primary-light: #1a5a96;
+    --color-primary-dark: #0b3055;
+    --color-secondary: #d8202a;
     --color-secondary-light: #e8404a;
-    --color-secondary-dark:  #b01820;
-    --font-family-sans:      "Outfit", sans-serif;
+    --color-secondary-dark: #b01820;
+    --font-family-sans: "Outfit", sans-serif;
+}
+
+body,
+input,
+select,
+textarea,
+button,
+label,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Outfit", sans-serif !important;
+}
+
+button {
+    cursor: pointer !important;
 }
 
 body {
-    font-family: "Outfit", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    text-transform: capitalize;
+}
+
+/* Override capitalization for technical units and acronyms */
+.uppercase,
+.font-black,
+.font-extrabold {
+    text-transform: none !important;
+}
+
+[class*="uppercase"] {
+    text-transform: uppercase !important;
+}
+
+input,
+select {
+    /* padding: 10px 15px !important; */
+    border: 1px solid #cccccc8c !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+label,
+p,
+span {
+    font-size: 14px !important;
+}
+
+.tender-scroll p {
+    font-size: 12px !important;
 }

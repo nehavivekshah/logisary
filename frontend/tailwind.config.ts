@@ -7,6 +7,16 @@ const config: Config = {
         './app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        container: {
+            center: true,
+            screens: {
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1320px', // Restrict max-width to 1320px globally
+            },
+        },
         extend: {
             colors: {
                 primary: {

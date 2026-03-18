@@ -23,7 +23,7 @@ export default function Navbar() {
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2">
                     <div className="text-3xl font-black bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent italic flex items-center">
-                        <img src="/assets/logo.png" alt="Logo" className="w-55 h-12" />
+                        <img src="/assets/logo.png" alt="Logo" className="w-48 h-12" />
                     </div>
                 </Link>
 
