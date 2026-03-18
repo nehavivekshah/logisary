@@ -847,6 +847,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
+
             {/* 9. Blog Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 max-w-[1320px]">
@@ -889,10 +890,10 @@ export default function LandingPage() {
                             <div key={index} className="group bg-[#f8f9fa] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 border border-zinc-100 flex flex-col h-full">
                                 {/* Image Box */}
                                 <div className="relative h-64 overflow-hidden">
-                                    <img 
-                                        src={post.img} 
-                                        alt={post.title} 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" 
+                                    <img
+                                        src={post.img}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                                         onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1586528116311-ad8ed7c66364?auto=format&fit=crop&q=80" }}
                                     />
                                     {/* Date Badge */}
@@ -922,7 +923,7 @@ export default function LandingPage() {
                                     <h4 className="text-2xl font-bold text-zinc-900 mb-4 leading-snug group-hover:text-primary transition-colors">
                                         <Link href="#">{post.title}</Link>
                                     </h4>
-                                    
+
                                     <p className="text-zinc-600 text-[15px] leading-relaxed mb-8 flex-1">
                                         {post.desc}
                                     </p>
@@ -939,6 +940,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
+
         </main>
     );
 }
