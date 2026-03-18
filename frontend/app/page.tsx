@@ -631,7 +631,7 @@ export default function LandingPage() {
                             Efficient Working Process
                         </h2>
                         <p className="text-white/80 text-[16px] leading-relaxed">
-                            Our working process is designed to deliver efficient, reliable, & tailored<br className="hidden md:block" /> 
+                            Our working process is designed to deliver efficient, reliable, & tailored<br className="hidden md:block" />
                             logistics solutions. From the initial consultation to the final delivery,
                         </p>
                     </div>
@@ -659,17 +659,17 @@ export default function LandingPage() {
                                 desc: "Material is transported safely with in-transit insurance options. Real-time tracking ensures visibility throughout the journey."
                             }
                         ].map((item, index) => (
-                            <div key={index} className="p-10 rounded-xl bg-white shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left min-h-[360px]">
+                            <div key={index} className="p-10 rounded-xl bg-white hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left min-h-[360px]">
                                 <div className="w-14 h-14 bg-[#104674] rounded-full flex items-center justify-center text-white mb-8 shadow-lg">
                                     {item.icon}
                                 </div>
-                                
+
                                 <h4 className="text-[20px] font-bold text-[#104674] mb-6 leading-snug">
                                     <Link href="/how-it-works.php" className="hover:underline underline-offset-4 decoration-primary/30">
                                         {item.title}
                                     </Link>
                                 </h4>
-                                
+
                                 <p className="text-zinc-600 text-[15px] leading-relaxed">
                                     {item.desc}
                                 </p>
@@ -721,17 +721,17 @@ export default function LandingPage() {
                                 img: "/assets/img/testimonial/ca-testi3.1.png"
                             }
                         ].map((t) => (
-                            <div key={t.id} className={`p-8 rounded-2xl border transition-all duration-500 hover:shadow-2xl hover:border-primary/20 bg-white ${activeTestimonial === t.id ? 'border-primary/40 shadow-xl' : 'border-zinc-100'}`} onClick={() => setActiveTestimonial(t.id)}>
+                            <div key={t.id} className={`p-8 rounded-2xl border transition-all duration-500 hover:shadow-xl hover:border-primary/20 bg-white ${activeTestimonial === t.id ? 'border-primary/40 shadow-xl' : 'border-zinc-100'}`} onClick={() => setActiveTestimonial(t.id)}>
                                 <div className="flex items-center justify-between mb-8">
                                     <div className="flex gap-1 text-amber-400">
                                         {[...Array(t.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                                     </div>
                                     <span className="text-zinc-400 text-xs font-bold">(5) Rating</span>
                                 </div>
-                                
+
                                 <h4 className="text-xl font-bold text-zinc-900 mb-4 leading-snug">"{t.quote}"</h4>
                                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic line-clamp-4">"{t.text}"</p>
-                                
+
                                 <div className="flex items-center gap-4 pt-6 border-t border-zinc-50">
                                     <div className="w-12 h-12 bg-zinc-100 rounded-full overflow-hidden border-2 border-primary/10">
                                         <img src={t.img} alt={t.user} className="w-full h-full object-cover" onError={(e) => { e.currentTarget.src = "https://ui-avatars.com/api/?name=" + t.user.replace(' ', '+'); }} />
@@ -767,7 +767,7 @@ export default function LandingPage() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/* Left Side: Form */}
-                        <div className="bg-white p-10 lg:p-14 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-zinc-100">
+                        <div className="bg-white p-10 lg:p-14 rounded-2xl shadow-md border border-zinc-100">
                             <div className="mb-8">
                                 <h4 className="text-2xl font-bold text-zinc-900 mb-4">Send Us A Message</h4>
                                 <p className="text-zinc-500 text-[15px] leading-relaxed">
@@ -817,7 +817,7 @@ export default function LandingPage() {
                                     </p>
                                 </div>
                             </div>
-                            
+
                             {/* Single Location Item */}
                             <div className="flex gap-6 items-start group">
                                 <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0 border border-primary/10 shadow-sm">
