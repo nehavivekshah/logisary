@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
-import { Search, Calendar, ChevronRight, Truck, Phone, Mail, MapPin, CheckCircle, Globe, Award, ShieldCheck, User, Facebook, Linkedin, Instagram, Twitter, Play, Check, PackageCheck, Users, Droplets, FilePlus, MousePointer2, ClipboardCheck, Star } from 'lucide-react';
+import { Search, Calendar, ChevronRight, Truck, Phone, Mail, MapPin, CheckCircle, Globe, Award, ShieldCheck, User, Facebook, Linkedin, Instagram, Twitter, Play, Check, PackageCheck, Users, Droplets, FilePlus, MousePointer2, ClipboardCheck, Star, Tag } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { api } from '@/utils/api';
@@ -844,6 +844,98 @@ export default function LandingPage() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            {/* 9. Blog Section */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4 max-w-[1320px]">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest inline-block mb-4">Our Blog</span>
+                        <h2 className="text-4xl lg:text-4xl font-bold text-zinc-900 leading-tight mb-6 capitalize">Best Practices and Strategies</h2>
+                        <p className="text-zinc-600 text-[16px] leading-relaxed">
+                            Gain insights into effective warehouse management strategies that<br className="hidden md:block" />
+                            maximize space, improve accuracy, and boost productivity.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                date: "March 21, 2024",
+                                author: "Henry Nicolls",
+                                category: "Transport & Logistics",
+                                title: "Optimizing Last-Mile Delivery: Strategies for Success",
+                                desc: "Delve into the challenges of last-mile delivery and explore strategies to overcome them.",
+                                img: "/assets/img/blog/ca-blog-1.2.png"
+                            },
+                            {
+                                date: "March 20, 2024",
+                                author: "Henry Nicolls",
+                                category: "Transport & Logistics",
+                                title: "Handling Project Cargo: Expert Tips and Strategies",
+                                desc: "Get expert tips on managing project cargo logistics. From planning and coordination.",
+                                img: "/assets/img/blog/ca-blog-1.3.png"
+                            },
+                            {
+                                date: "March 18, 2024",
+                                author: "Henry Nicolls",
+                                category: "Transport & Logistics",
+                                title: "The Importance of Reliable Freight Forwarding Services",
+                                desc: "Learn practical strategies for optimizing your supply chain operations, improve delivery.",
+                                img: "/assets/img/blog/ca-blog-1.1.png"
+                            }
+                        ].map((post, index) => (
+                            <div key={index} className="group bg-[#f8f9fa] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 border border-zinc-100 flex flex-col h-full">
+                                {/* Image Box */}
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src={post.img} 
+                                        alt={post.title} 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" 
+                                        onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1586528116311-ad8ed7c66364?auto=format&fit=crop&q=80" }}
+                                    />
+                                    {/* Date Badge */}
+                                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-bold text-zinc-900 shadow-md">
+                                        {post.date}
+                                    </div>
+                                </div>
+
+                                {/* Content Box */}
+                                <div className="p-8 flex-1 flex flex-col">
+                                    {/* Meta Tags */}
+                                    <div className="flex flex-wrap gap-4 mb-6">
+                                        <div className="flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors cursor-pointer group/meta">
+                                            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-zinc-100 group-hover/meta:bg-primary group-hover/meta:text-white transition-colors">
+                                                <User size={14} strokeWidth={2.5} />
+                                            </div>
+                                            <span className="text-sm font-medium">{post.author}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors cursor-pointer group/meta">
+                                            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-zinc-100 group-hover/meta:bg-primary group-hover/meta:text-white transition-colors">
+                                                <Tag size={14} strokeWidth={2.5} />
+                                            </div>
+                                            <span className="text-sm font-medium">{post.category}</span>
+                                        </div>
+                                    </div>
+
+                                    <h4 className="text-2xl font-bold text-zinc-900 mb-4 leading-snug group-hover:text-primary transition-colors">
+                                        <Link href="#">{post.title}</Link>
+                                    </h4>
+                                    
+                                    <p className="text-zinc-600 text-[15px] leading-relaxed mb-8 flex-1">
+                                        {post.desc}
+                                    </p>
+
+                                    <div className="mt-auto pt-6 border-t border-zinc-200">
+                                        <Link href="#" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all uppercase tracking-wider text-xs">
+                                            Read More
+                                            <ChevronRight size={16} />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
