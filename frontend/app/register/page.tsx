@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function RegisterPage() {
     const router = useRouter();
-    const [role, setRole] = useState('shipper');
+    const [role, setRole] = useState('supplier');
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -30,7 +30,7 @@ export default function RegisterPage() {
                         <div className="relative z-10">
                             <h2 className="text-3xl font-bold mb-4">Join Logisary</h2>
                             <p className="opacity-80 mb-8 leading-relaxed">
-                                Connect with the largest network of trusted carriers and shippers.
+                                Connect with the largest network of trusted transporters and suppliers.
                             </p>
                             <ul className="space-y-3 opacity-90 text-sm">
                                 <li className="flex items-center gap-2"><div className="w-2 h-2 bg-white rounded-full" /> Post & Bid on loads instantly</li>
@@ -52,17 +52,17 @@ export default function RegisterPage() {
                             <div className="bg-zinc-100 p-1 rounded-lg flex mb-8">
                                 <button
                                     type="button"
-                                    onClick={() => setRole('shipper')}
-                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${role === 'shipper' ? 'bg-white text-[#104674] shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
+                                    onClick={() => setRole('supplier')}
+                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${role === 'supplier' ? 'bg-white text-[#104674] shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
                                 >
-                                    I am a Shipper
+                                    I am a Supplier
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => setRole('carrier')}
-                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${role === 'carrier' ? 'bg-white text-[#104674] shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
+                                    onClick={() => setRole('transporter')}
+                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${role === 'transporter' ? 'bg-white text-[#104674] shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
                                 >
-                                    I am a Carrier
+                                    I am a Transporter
                                 </button>
                             </div>
 
@@ -86,13 +86,13 @@ export default function RegisterPage() {
                                 </div>
                             </div>
 
-                            {/* Carrier Specific Field with Animation */}
-                            {role === 'carrier' && (
+                            {/* Transporter Specific Field with Animation */}
+                            {role === 'transporter' && (
                                 <div className="mb-6 animate-in slide-in-from-top-2 duration-300">
                                     <div className="p-4 bg-primary/5 border border-blue-100 rounded-lg">
                                         <label className="text-xs font-bold text-primary uppercase block mb-1">DOT / MC Number</label>
                                         <input type="text" className="w-full p-3 border border-blue-200 rounded-lg outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] bg-white transition-all" placeholder="Enter DOT Number" />
-                                        <small className="text-primary-light/80 text-xs mt-1 block">Required for carrier verification.</small>
+                                        <small className="text-primary-light/80 text-xs mt-1 block">Required for transporter verification.</small>
                                     </div>
                                 </div>
                             )}

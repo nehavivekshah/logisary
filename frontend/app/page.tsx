@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
-import { Search, Calendar, ChevronRight, Truck, Phone, Mail, MapPin, CheckCircle, Globe, Award, ShieldCheck, User, Facebook, Linkedin, Instagram, Twitter, Play, Check, PackageCheck, Users, Droplets, FilePlus, MousePointer2, ClipboardCheck, Star, Tag } from 'lucide-react';
+import { Search, Calendar, ChevronRight, Truck, Phone, Mail, MapPin, CheckCircle, Globe, Award, ShieldCheck, User, Facebook, Linkedin, Instagram, Twitter, Play, Check, PackageCheck, Users, Droplets, FilePlus, MousePointer2, ClipboardCheck, Star, Tag, ArrowRight, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { api } from '@/utils/api';
@@ -24,6 +24,12 @@ export default function LandingPage() {
     const [form, setForm] = useState({ from: '', to: '', materialName: '', materialQty: '', vehicleType: '' });
     const [activeService, setActiveService] = useState(0);
     const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+    // Supplier Registration Modal State
+    const [isSupplierModalOpen, setIsSupplierModalOpen] = useState(false);
+    const [supplierModalStep, setSupplierModalStep] = useState(0); // 0: Mobile, 1: OTP, 2: Reg Form
+    const [supplierMobile, setSupplierMobile] = useState('');
+    const [supplierOtp, setSupplierOtp] = useState('');
 
     useEffect(() => {
         fetchData();
@@ -118,7 +124,16 @@ export default function LandingPage() {
                                                     <option>Select Vehicle Type</option>
                                                 </select>
                                             </div>
-                                            <button type="button" className="w-full py-3 bg-[#1a5a96] text-white text-[14px] font-bold rounded uppercase tracking-wider mt-2">
+                                            <button 
+                                                type="button" 
+                                                onClick={() => {
+                                                    setSupplierModalStep(0);
+                                                    setSupplierMobile('');
+                                                    setSupplierOtp('');
+                                                    setIsSupplierModalOpen(true);
+                                                }}
+                                                className="w-full py-3 bg-[#1a5a96] text-white text-[14px] font-bold rounded uppercase tracking-wider mt-2 hover:bg-[#104674] transition-colors"
+                                            >
                                                 Check Availability
                                             </button>
                                         </form>
@@ -941,6 +956,206 @@ export default function LandingPage() {
                 </div>
             </section>
 
+            {/* Supplier Registration Modal */}
+            {isSupplierModalOpen && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-300">
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[700px] overflow-hidden flex flex-col max-h-[90vh]">
+                        {/* Header */}
+                        <div className="flex items-center justify-between p-6 border-b border-zinc-100 bg-zinc-50/50">
+                            <h5 className="text-xl font-bold text-zinc-900">
+                                {supplierModalStep < 2 ? 'Supplier Verification' : supplierModalStep === 2 ? 'Supplier Registration (Step 1)' : 'KYC & Product Info (Step 2)'}
+                            </h5>
+                            <button 
+                                type="button" 
+                                onClick={() => setIsSupplierModalOpen(false)}
+                                className="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-200/50 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-800 transition-colors"
+                            >
+                                <X size={18} strokeWidth={2.5} />
+                            </button>
+                        </div>
+                        
+                        {/* Body */}
+                        <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar">
+                            {supplierModalStep === 0 && (
+                                <div className="space-y-6 max-w-md mx-auto animate-in slide-in-from-right-4">
+                                    <div className="text-center mb-8">
+                                        <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <Phone size={28} />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-zinc-900 mb-2">Verify Your Mobile</h3>
+                                        <p className="text-zinc-500 text-sm leading-relaxed">
+                                            Please enter your mobile number to receive a One-Time Password (OTP) for verification.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input 
+                                            type="tel" 
+                                            value={supplierMobile}
+                                            onChange={(e) => setSupplierMobile(e.target.value)}
+                                            className="w-full px-5 py-4 bg-zinc-50/50 border border-zinc-200 rounded-xl outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all font-medium text-lg text-center" 
+                                            placeholder="Enter mobile number" 
+                                            autoFocus
+                                        />
+                                    </div>
+                                    <button 
+                                        type="button"
+                                        onClick={() => {
+                                            if(supplierMobile.length > 5) setSupplierModalStep(1);
+                                        }}
+                                        className="w-full py-4 bg-[#104674] text-white font-bold rounded-xl hover:bg-[#0d365a] transition-all flex items-center justify-center gap-2 shadow-xl shadow-[#104674]/20"
+                                    >
+                                        Send OTP <ChevronRight size={18} />
+                                    </button>
+                                </div>
+                            )}
+
+                            {supplierModalStep === 1 && (
+                                <div className="space-y-6 max-w-md mx-auto animate-in slide-in-from-right-4">
+                                    <div className="text-center mb-8">
+                                        <div className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <CheckCircle size={28} />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-zinc-900 mb-2">Enter Verification Code</h3>
+                                        <p className="text-zinc-500 text-sm leading-relaxed">
+                                            Enter the 4-digit OTP sent to <span className="font-bold text-zinc-900">{supplierMobile}</span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input 
+                                            type="text" 
+                                            value={supplierOtp}
+                                            onChange={(e) => setSupplierOtp(e.target.value)}
+                                            className="w-full px-5 py-4 bg-zinc-50/50 border border-zinc-200 rounded-xl outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all text-center text-3xl tracking-[0.5em] font-bold" 
+                                            placeholder="••••" 
+                                            maxLength={4}
+                                            autoFocus
+                                        />
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <button 
+                                            type="button"
+                                            onClick={() => setSupplierModalStep(0)}
+                                            className="w-1/3 py-4 bg-zinc-100 text-zinc-600 font-bold rounded-xl hover:bg-zinc-200 transition-colors"
+                                        >
+                                            Back
+                                        </button>
+                                        <button 
+                                            type="button"
+                                            onClick={() => {
+                                                if(supplierOtp.length === 4) setSupplierModalStep(2);
+                                            }}
+                                            className="w-2/3 py-4 bg-[#1a5a96] text-white font-bold rounded-xl hover:bg-[#104674] transition-all flex items-center justify-center gap-2 shadow-xl shadow-[#1a5a96]/20"
+                                        >
+                                            Verify <ArrowRight size={18} />
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+
+                            {supplierModalStep === 2 && (
+                                <form className="space-y-6 animate-in slide-in-from-bottom-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Company Name</label>
+                                            <input type="text" className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all" placeholder="Enter company name" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Company Phone No.</label>
+                                            <input type="text" className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all" placeholder="Enter company phone" />
+                                        </div>
+                                        <div className="md:col-span-2">
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Address</label>
+                                            <textarea className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all resize-none" rows={2} placeholder="Enter full address"></textarea>
+                                        </div>
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Contact Person Name</label>
+                                            <input type="text" className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all" placeholder="Enter person name" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Position</label>
+                                            <input type="text" className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all" placeholder="Enter position" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Mob / Phone No.</label>
+                                            <input type="text" className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all cursor-not-allowed opacity-80" placeholder="Mobile" value={supplierMobile} readOnly />
+                                        </div>
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-zinc-500 mb-1.5 uppercase tracking-wider">Email Id</label>
+                                            <input type="email" className="w-full p-3.5 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-2 focus:ring-[#104674]/20 transition-all" placeholder="Enter email id" />
+                                        </div>
+                                    </div>
+                                    <div className="pt-6 mt-6 border-t border-zinc-100 flex justify-end">
+                                        <button 
+                                            type="button" 
+                                            className="px-10 py-3.5 bg-[#1a5a96] text-white text-[14px] font-bold rounded-lg hover:bg-[#104674] transition-all uppercase tracking-wider shadow-xl shadow-[#1a5a96]/20 flex items-center gap-2 group"
+                                            onClick={() => {
+                                                setSupplierModalStep(3);
+                                            }}
+                                        >
+                                            Next Step 
+                                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
+
+                            {supplierModalStep === 3 && (
+                                <form className="space-y-6 animate-in slide-in-from-right-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        {/* Personal Docs */}
+                                        <div className="space-y-4">
+                                            <h6 className="text-[13px] font-extrabold text-[#104674] uppercase tracking-widest border-b border-zinc-100 pb-2 mb-4">Personal Docs</h6>
+                                            <div>
+                                                <input type="text" className="w-full p-3 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] transition-all" placeholder="Aadhar No." />
+                                            </div>
+                                            <div>
+                                                <input type="text" className="w-full p-3 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] transition-all" placeholder="PAN No." />
+                                            </div>
+                                            <div>
+                                                <input type="text" className="w-full p-3 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] transition-all" placeholder="DL Number" />
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Company Docs */}
+                                        <div className="space-y-4">
+                                            <h6 className="text-[13px] font-extrabold text-[#104674] uppercase tracking-widest border-b border-zinc-100 pb-2 mb-4">Company Docs</h6>
+                                            <div>
+                                                <input type="text" className="w-full p-3 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] transition-all" placeholder="Comp. PAN Card" />
+                                            </div>
+                                            <div>
+                                                <input type="text" className="w-full p-3 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] transition-all" placeholder="GST Registration" />
+                                            </div>
+                                            <div>
+                                                <input type="text" className="w-full p-3 border border-zinc-200 rounded-lg text-sm bg-zinc-50 focus:bg-white outline-none focus:border-[#104674] focus:ring-1 focus:ring-[#104674] transition-all" placeholder="ITR Return Details" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center">
+                                        <button 
+                                            type="button" 
+                                            className="px-6 py-3.5 bg-zinc-100 text-zinc-600 text-[14px] font-bold rounded-lg hover:bg-zinc-200 transition-colors uppercase tracking-wider"
+                                            onClick={() => setSupplierModalStep(2)}
+                                        >
+                                            Back
+                                        </button>
+                                        <button 
+                                            type="button" 
+                                            className="px-10 py-3.5 bg-green-600 text-white text-[14px] font-bold rounded-lg hover:bg-green-700 transition-all uppercase tracking-wider shadow-xl shadow-green-600/20 flex items-center gap-2 group"
+                                            onClick={() => {
+                                                alert("All info submitted successfully! Registration Complete.");
+                                                setIsSupplierModalOpen(false);
+                                            }}
+                                        >
+                                            <CheckCircle size={18} className="group-hover:scale-110 transition-transform" />
+                                            Final Submit 
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }

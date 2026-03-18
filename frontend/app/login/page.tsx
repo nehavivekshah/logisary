@@ -61,8 +61,8 @@ export default function LoginPage() {
                                     required
                                 >
                                     <option value="" disabled>Login As</option>
-                                    <option value="shipper">Shipper</option>
-                                    <option value="carrier">Carrier</option>
+                                    <option value="supplier">Supplier</option>
+                                    <option value="transporter">Transporter</option>
                                 </select>
                             </div>
 

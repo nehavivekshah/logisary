@@ -1,27 +1,39 @@
 'use client';
 import Link from 'next/link';
-import { Truck, Facebook, Linkedin, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { Truck, Facebook, Linkedin, Instagram, Twitter, MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <div className="relative mt-20">
-            {/* CTA Banner */}
-            <div className="bg-primary py-16">
-                <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div className="text-white max-w-2xl">
-                        <h2 className="text-4xl font-extrabold mb-4">Join Us Today And Let Us Help You To Grow Your Business.</h2>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <Link href="/help" className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-primary/5 transition-colors flex items-center gap-2">
-                            Contact Us
-                        </Link>
+        <div className="relative">
+            {/* 10. Call to Action (CTA) */}
+            <section className="relative z-10 bg-[#104674] overflow-hidden -mb-1">
+                {/* Decorative Background Shape */}
+                <div className="absolute top-0 right-0 h-full hidden lg:block opacity-20 pointer-events-none">
+                    <img src="/assets/images/vector/footer-vec.png" alt="" className="h-full object-cover" />
+                </div>
+
+                <div className="container mx-auto px-4 max-w-[1320px] py-16 lg:py-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-20">
+                        {/* CTA Text */}
+                        <div>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                                Join Us Today And Let Us Help You To Grow Your Business.
+                            </h2>
+                        </div>
+
+                        {/* CTA Button */}
+                        <div className="lg:text-right">
+                            <Link href="/contact-us" className="inline-flex items-center gap-2 bg-white text-[#104674] hover:bg-zinc-100 font-bold uppercase tracking-widest text-[13px] py-4 px-10 rounded-full transition-all group shadow-xl">
+                                Contact Us
+                                <ChevronRight size={16} className="text-[#104674] group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </section>
             {/* Main Footer */}
             <footer className="bg-white border-t border-zinc-100 pt-16 pb-8">
-                <div className="container mx-auto px-4 max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div className="container mx-auto px-4 max-w-[1320px] grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div className="space-y-6">
                         <div className="text-2xl font-black bg-gradient-to-r from-red-600 to-primary bg-clip-text text-transparent italic flex items-center">
                             LOGISARY <Truck className="inline-block ml-1 w-6 h-6 text-primary fill-current" />
@@ -76,7 +88,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="container mx-auto px-4 max-w-6xl border-t border-zinc-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500">
+                <div className="container mx-auto max-w-[1320px] px-4 border-t border-zinc-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500">
                     <p>RK Transportation © 2026.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <Link href="/terms" className="hover:text-zinc-900">Terms & Conditions</Link>
